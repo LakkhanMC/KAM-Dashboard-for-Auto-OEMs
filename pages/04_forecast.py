@@ -1,4 +1,5 @@
 from utils.paths import data_path
+import streamlit as st
 import pandas as pd
 
 @st.cache_data
