@@ -100,7 +100,7 @@ def main():
 
     st.divider()
 
-    st.subheader("🔥 Dealers Requiring Attention (Health < 45 & High Churn)")
+    st.subheader("Dealers Requiring Attention (Health < 45 & High Churn)")
 
     risk_df = df[(df.health_score < 45) & (df.churn_prob > 0.55)]
     st.dataframe(risk_df[["dealer_id", "region", "health_score", "risk_bucket", "churn_prob"]], hide_index=True)
@@ -109,7 +109,7 @@ def main():
 
     st.divider()
 
-    st.subheader("🚀 Dealers with Latent Demand (High Sales + Poor Inventory)")
+    st.subheader("Dealers with Latent Demand (High Sales + Poor Inventory)")
 
     latent = (
         vol.merge(inv.groupby("dealer_id")["ageing_days"].mean().reset_index(), on="dealer_id")
